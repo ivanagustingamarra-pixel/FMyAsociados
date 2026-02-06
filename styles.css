@@ -1,0 +1,496 @@
+:root {
+  --primary-dark: #1a1a1a;
+  --secondary-dark: #2c3e50;
+  --accent: #e67e22;
+  --bg-light: #ecf0f1;
+  --bg-alt: #f4f7f8;
+  --text-dark: #34495e;
+  --text-light: #ecf0f1;
+  --whatsapp: #25d366;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+}
+
+body {
+  font-family: "Segoe UI", Roboto, sans-serif;
+  line-height: 1.6;
+  color: var(--text-dark);
+  background-color: var(--bg-light);
+  overflow-x: hidden;
+  position: relative;
+}
+
+/* --- NAVEGACIÓN --- */
+header {
+  background: var(--primary-dark);
+  color: var(--text-light);
+  padding: 0;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  border-bottom: 3px solid var(--accent);
+  height: 6rem;
+  display: flex;
+  align-items: center;
+}
+
+.nav-container {
+  /* max-width: 1400px; Incrementado para mayor apertura lateral */
+  width: 100%;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0 4rem; /* Empuja logo a la izquierda y menú a la derecha */
+  gap: 0;
+}
+
+@media (min-width: 768px) {
+  .nav-container {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+}
+
+.logo{
+  display: flex;
+  align-items: center;
+  width: 30%;
+  justify-content: center;
+}
+
+.logo-link {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  gap: 15px;
+}
+
+.logo-img {
+  height: 5vh;
+  padding: 0.5rem;
+  width: auto;
+  display: block;
+}
+
+.logo-text {
+  color: white;
+  font-size: 1.6rem;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  text-transform: none; /* Asegura Fm & Asociados en minúsculas */
+}
+.nav-menu{
+    width: 60%;
+}
+.nav-menu ul {
+  display: flex;
+  list-style: none;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+  justify-content: center;
+
+}
+
+nav a {
+  color: #bdc3c7;
+  text-decoration: none;
+  font-size: 0.8rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  padding: 0.5rem;
+  transition: color 0.3s;
+}
+
+@media (min-width: 768px) {
+  nav a {
+    font-size: 0.95rem;
+    padding: 1rem;
+  }
+  .nav-menu ul {
+    gap: 1.5rem;
+  }
+}
+
+nav a:hover {
+  color: var(--accent);
+}
+
+/* --- TÍTULOS --- */
+.section-title {
+  font-size: 2.2rem;
+  text-align: center;
+  margin-bottom: 1.5rem;
+  color: var(--secondary-dark);
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+/* --- LÓGICA DE SCROLL --- */
+.scroll-anchor {
+  position: absolute;
+  top: -120px;
+}
+
+@media (min-width: 768px) {
+  .scroll-anchor {
+    top: -120px; /* Ajustado para el nuevo height de la navbar */
+  }
+}
+
+/* --- HERO --- */
+.hero {
+  background:
+    linear-gradient(rgba(26, 26, 26, 0.9), rgba(44, 62, 80, 0.9)),
+    url("https://picsum.photos/seed/telecom/1600/900") center/cover;
+  color: var(--text-light);
+  padding: 2rem 1rem;
+  text-align: center;
+}
+
+.hero h1 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  font-weight: 800;
+}
+
+.hero-subtitle {
+  font-size: 1.4rem;
+  color: #bdc3c7;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+/* --- VIDEOS --- */
+.featured-video-section {
+  background-color: #dfe6e9;
+  padding: 3rem 0;
+  display: flex;
+  justify-content: space-around;
+}
+
+.video-container-full {
+  /* width: 95%;
+  max-width: 1100px; */
+  /* height: 300px; */
+  border: 3px solid var(--accent);
+  border-radius: 8px;
+  /* overflow: hidden; */
+  background: #000;
+  width: 40%;
+}
+
+@media (min-width: 768px) {
+  .video-container-full {
+    /* height: 50vh; */
+  }
+}
+
+.featured-vid {
+  /* width: 100%; */
+  height: 100%;
+  object-fit: contain;
+}
+
+/* --- SECCIONES --- */
+.services-overview {
+  padding: 5rem 1.5rem;
+  background-color: white;
+  display: flex;
+  justify-content: space-around;
+}
+.services-container{
+  width: 40%;
+}
+
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.service-card {
+  background: white;
+  padding: 2.5rem;
+  text-align: center;
+  border-radius: 8px;
+  border-top: 4px solid var(--accent);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+}
+
+.service-card h3 {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.icon-container {
+  font-size: 3.5rem;
+  color: var(--accent);
+  margin-bottom: 1rem;
+}
+
+.section-projects {
+  padding: 6rem 1rem;
+  background-color: var(--bg-alt);
+}
+
+.project-card {
+  background: #000;
+  border-radius: 8px;
+  overflow: hidden;
+  height: 250px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.project-card video {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+/* --- SECCIÓN POR QUÉ ELEGIRNOS (INCREMENTADA) --- */
+.why-us {
+  background-color: #dfe6e9;
+  text-align: center;
+  /* position: relative; */
+  padding: 8rem 2rem; /* Mucho más margen vertical */
+  min-height: 60vh; /* Altura incrementada */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.container-text {
+  width: 30%;
+}
+
+.justification-container p {
+  font-size: 1.35rem; /* Texto más grande */
+  line-height: 1.8;
+  margin-bottom: 1.5rem;
+  color: var(--text-dark);
+}
+
+.cta-button {
+  background: var(--accent);
+  color: white;
+  padding: 1.2rem 3rem;
+  border: none;
+  border-radius: 4px;
+  font-weight: bold;
+  font-size: 1.1rem;
+  cursor: pointer;
+  margin-top: 2rem;
+  transition: transform 0.2s;
+}
+
+.cta-button:hover {
+  transform: translateY(-3px);
+}
+
+/* --- CONTACTO --- */
+.contact {
+  background-color: var(--secondary-dark);
+  color: var(--text-light);
+  padding: 6rem 1.5rem 8rem 1.5rem;
+  text-align: center;
+  /* position: relative; */
+}
+
+.title-contact {
+  font-size: 2.2rem;
+  font-weight: 800;
+  margin-bottom: 3rem;
+  text-transform: uppercase;
+}
+
+.map-container {
+  margin-bottom: 2.5rem;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+/* --- WHATSAPP & FOOTER --- */
+.whatsapp-float {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background: var(--whatsapp);
+  color: white;
+  padding: 12px 24px;
+  border-radius: 50px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  z-index: 2000;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+footer {
+  background: var(--primary-dark);
+  color: #777;
+  text-align: center;
+  padding: 2rem;
+}
+
+/* Ajustes Responsivos Finales */
+@media (max-width: 1024px) {
+  .nav-container {
+    padding: 0 2rem;
+  }
+}
+
+@media (max-width: 768px) {
+  header {
+    min-height: auto;
+    padding: 10px 0;
+  }
+  .nav-container {
+    padding: 0;
+  }
+  .why-us {
+    padding: 5rem 1.5rem;
+  }
+  .justification-container p {
+    font-size: 0.8rem;
+  }
+}
+
+/* --- CAROUSEL CSS NATIVO (radio + labels) --- */
+/* --- CAROUSEL CSS NATIVO (radio + labels) - Reworked using absolute slides --- */
+.carousel {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  /* overflow: hidden; */
+}
+.carousel input { display: none; }
+.carousel .slides {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+.carousel .slide {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #000;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.5s ease-in-out;
+}
+.carousel .slide.active,
+.carousel .slide[aria-hidden="false"] {
+  opacity: 1;
+  pointer-events: auto;
+  z-index: 2;
+}
+.carousel .slide video {
+  /* width: 100%; */
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* Show slide when corresponding radio is checked */
+#c1:checked ~ .slides .slide:nth-of-type(1),
+#c2:checked ~ .slides .slide:nth-of-type(2),
+#c3:checked ~ .slides .slide:nth-of-type(3),
+#c4:checked ~ .slides .slide:nth-of-type(4),
+#c5:checked ~ .slides .slide:nth-of-type(5),
+#c6:checked ~ .slides .slide:nth-of-type(6),
+#c7:checked ~ .slides .slide:nth-of-type(7) {
+  opacity: 1;
+  pointer-events: auto;
+  z-index: 2;
+}
+
+.carousel .indicators {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: -2rem;
+  display: flex;
+  gap: 1.5rem;
+  z-index: 10;
+}
+.carousel .indicators label {
+  width: 1.5rem;
+  height: 1.5rem;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.5);
+  cursor: pointer;
+  display: inline-block;
+  transition: background 0.2s;
+  border: 2px solid rgba(0,0,0,0.2);
+}
+.carousel .indicators label:hover { background: rgba(255,255,255,0.8); }
+
+/* Highlight active indicator */
+#c1:checked ~ .indicators label[for="c1"],
+#c2:checked ~ .indicators label[for="c2"],
+#c3:checked ~ .indicators label[for="c3"],
+#c4:checked ~ .indicators label[for="c4"],
+#c5:checked ~ .indicators label[for="c5"],
+#c6:checked ~ .indicators label[for="c6"],
+#c7:checked ~ .indicators label[for="c7"] {
+  background: var(--accent);
+  box-shadow: 0 0 6px rgba(0,0,0,0.2);
+}
+
+/* Responsive: stack carousel full width on small screens */
+@media (max-width: 900px) {
+  .featured-video-section {
+    flex-direction: column;
+    gap: 1.5rem;
+    align-items: center;
+  }
+  .container-text, .services-container {
+    width: 95%;
+    height: 100%;
+  }
+  .services-overview{
+    flex-direction: column;
+    gap: 4rem;
+    align-items: center;
+  }
+  .video-container-full{
+    width: 95%;
+    height: 70vh;
+  }
+  .logo-text{
+    font-size: 1rem;
+  }
+  .logo{
+    width: 100%;
+  }
+  .nav-menu{
+    display: none;
+  }
+
+  .whatsapp-float{
+    left: 0px;
+    right: auto;
+  }
+  .section-title{
+    font-size: revert;
+  }
+}
+
